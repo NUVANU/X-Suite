@@ -1,7 +1,0 @@
-{
-  "name": "community-tool-booking",
-  "private": true,
-  "scripts": {
-    "start": "node server.mjs"
-  }
-}
