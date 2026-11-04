@@ -8,11 +8,13 @@ X Suite 将用户确认的需求、受范围约束的开发和可核对的项目
 | [XDev](https://github.com/NUVANU/XDev) | 按确认范围执行、Review 和 QA | MPL-2.0 |
 | [XMem](https://github.com/NUVANU/XMem) | 显式保存、来源与版本记录、新会话回读 | MPL-2.0 |
 
-## 组件源码版本
+## V0.1 社区版下载
 
-- [XMi 722896dd0408](https://github.com/NUVANU/XMi/commit/722896dd04081e7040dfb459907eda8e1c55ec94)
-- [XDev 3316b6408ee4](https://github.com/NUVANU/XDev/commit/3316b6408ee4da6c4c3fd7d482206289be003c96)
-- [XMem 91b8e0f6a7c2](https://github.com/NUVANU/XMem/commit/91b8e0f6a7c29dd29b5ee2572107ebd4d8f9b768)
+- [XMi v0.1.0 源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/tags/v0.1.0.zip)
+- [XDev v0.1.1 源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/tags/v0.1.1.zip)
+- [XMem v0.1.1 源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/tags/v0.1.1.zip)
+
+按 [Windows 安装指南](INSTALL.md) 安装这组配套版本。XDev 的项目配置工具会根据配套 XMem 运行包生成并核对部署清单。
 
 ## 联合验收范围
 
