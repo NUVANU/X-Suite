@@ -10,14 +10,14 @@ X Suite 将用户确认的需求、受范围约束的开发和可核对的项目
 
 ## V0.1 社区版下载
 
-- [XMi v0.1.0 源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/tags/v0.1.0.zip)
-- [XDev v0.1.1 源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/tags/v0.1.1.zip)
+- [XMi v0.1.1 源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/tags/v0.1.1.zip)
+- [XDev v0.1.2 源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/tags/v0.1.2.zip)
 - [XMem v0.1.1 源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/tags/v0.1.1.zip)
 
 按 [Windows 安装指南](INSTALL.md) 安装这组配套版本。XDev 的项目配置工具会根据配套 XMem 运行包生成并核对部署清单。
 
 ## 联合验收范围
 
-本机联合验收的组件为 XMi R3、XDev R10、XMem R6。
+Windows 本机联合验收覆盖 XMi 对话确认和 XSpec 导出、XDev 收件、独立 Review 与 Node QA，以及 XMem 保存和新会话回读。
 
 本仓库自有集成资料采用 Apache-2.0。各组件按其仓库标明的许可证分发。
