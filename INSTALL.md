@@ -1,4 +1,6 @@
-# X Suite V0.1 社区版安装
+# X Suite 社区版安装
+
+当前公开源码配套：**XMi V0.1.2、XDev 0.1.2、XMem 0.1.1**。本指南保留原有联合配置入口；XMi V0.1.2 的本机桌面验收与新版三件套端到端联合验收分别记录。
 
 使用 Windows x64、Node 24.20.0、npm 11.19.0、pnpm 11.25.0 和支持本地插件的 Codex。将三个源码 ZIP 解压到长期保留的本地目录。下文假定目录为 `C:\XSuite\XMi`、`C:\XSuite\XDev` 和 `C:\XSuite\XMem`。三个版本的下载链接见 [README](README.md)。
 
@@ -15,7 +17,11 @@ codex plugin marketplace add $xmi.plugin_directory --json
 codex plugin add xmi@xmi-local --json
 ```
 
-在 Codex 的原生插件入口审阅 XMi 的钩子并按界面操作。新开对话后，可以用 XMi 梳理项目需求。正式确认采用对话中列出的内容，并由真实的用户回复触发。
+在 Codex 的原生插件入口审阅 XMi 的钩子并按界面操作。新开对话后，可以用 XMi 梳理项目需求。正式确认采用对话中列出的完整待处理清单，默认回复“确认”；旧回复保持兼容。单项修改只列本次待处理项，其余已确认内容沿用。
+
+V0.1.2 在方案确认后自动生成同版本 24 章架构，再通过宿主支持的独立 Agent 能力评审需求与架构。报告、架构生成和评审启动不追加产品确认；导出仍需对确切包另行授权。详见 [XMi 工作流](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md)。
+
+上述命令面向新安装。升级已有 XMi 时，先关闭连接、备份并保留原数据路由及旧安装；首次配置工具不会接管已有数据库。按照 [XMi 升级说明](https://github.com/NUVANU/XMi/blob/main/docs/public/INSTALL.md) 更新入口，重连后核对实际版本，不覆盖运行中的 SQLite。
 
 ## 构建 XMem 并配置 XDev
 

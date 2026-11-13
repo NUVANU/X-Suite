@@ -49,11 +49,17 @@ X Suite is the integration and documentation repository. The component source co
 
 Suppose you want neighbors to borrow shared tools. You know the experience you want, but not the code.
 
-1. **Clarify with XMi.** Decide who can book, how conflicts are handled, whether a borrower can cancel, and what happens when a tool is unavailable. Keep undecided rules open instead of letting the AI invent them.
+1. **Clarify with XMi.** Decide who can book, how conflicts are handled, whether a borrower can cancel, and what happens when a tool is unavailable. Keep undecided rules open. After solution confirmation, XMi V0.1.2 derives the current 24-chapter architecture and uses supported host capabilities to review requirements and architecture together.
 2. **Develop with the host, check with XDev.** Work within the agreed files and behavior. Keep implementation, independent Review, and actual QA results separate and tied to the candidate being delivered.
 3. **Continue with XMem.** In a later session, retrieve the cancellation decision and earlier failure evidence with their sources. Check that the rule still applies before using it.
 
 This is an illustrative workflow, not an A/B benchmark result. Product decisions, exports, task authorization, code implementation, and delivery acceptance remain separate steps.
+
+## XMi V0.1.2 update
+
+The current XMi source adds incremental confirmation, the default **确认** reply, a version-bound 24-chapter architecture, and advisory independent review through the existing host capability. Unchanged confirmed content and current review results are reused; product changes are reviewed against their new version. [See release details](https://github.com/NUVANU/XMi/blob/main/docs/public/RELEASE-0.1.2.md).
+
+XMi V0.1.2 has a scoped acceptance record for an existing Windows Codex desktop installation. A new end-to-end joint acceptance with the published XDev/XMem pair remains a separate check.
 
 ## Get started
 
@@ -63,11 +69,11 @@ The documented community setup uses Windows x64, Node.js **24.20.0**, npm **11.1
 
 | Current community source | Package version | Download source |
 | --- | --- | --- |
-| XMi | `0.1.1` | [Source ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
+| XMi | `0.1.2` | [Source ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
 | XDev | `0.1.2` | [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) |
 | XMem | `0.1.1` | [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) |
 
-These are the package versions declared by the public source, within the **V0.1 community line**. A `main` ZIP follows the branch; record the commit if you need a reproducible setup. Use the matching installation instructions and deployment manifest rather than swapping an XMem runtime directory in place.
+These are the package versions declared by the public source. XMi is at **V0.1.2**; XDev and XMem retain the listed community package versions. A `main` ZIP follows the branch; record the commit if you need a reproducible setup. Use the matching installation instructions and deployment manifest rather than swapping an XMem runtime directory in place.
 
 After installation, try a small, concrete project first:
 

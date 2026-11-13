@@ -49,11 +49,17 @@ flowchart LR
 
 假设你想做一个邻里共享工具的预约应用，知道希望用户怎样使用，但不熟悉代码。
 
-1. **用 XMi 讲清楚。**谁能预约、时间冲突怎么处理、借用人能否取消、工具不可用时怎么办？还没决定的规则继续待定，不让 AI 替你拍板。
+1. **用 XMi 讲清楚。**谁能预约、时间冲突怎么处理、借用人能否取消、工具不可用时怎么办？还没决定的规则继续待定。方案确认后，XMi V0.1.2 派生当前版本的 24 章架构，并通过支持宿主的已有能力一起评审需求与架构。
 2. **由宿主开发，用 XDev 核对。**围绕约定的文件与功能推进，让实施、独立 Review、实际 QA 的结果分别记录，并对应到交付候选。
 3. **用 XMem 接续。**换个对话，检索之前的取消规则和失败记录，查看来源及适用条件，再决定是否用于当前开发。
 
 这是使用流程示意，不是 A/B 实测结果。产品决定、规格导出、任务授权、代码实现和交付验收，分别成立。
+
+## XMi V0.1.2 更新
+
+当前 XMi 源码增加增量确认、默认 **确认** 回复、版本绑定的 24 章架构，以及借助宿主已有能力的建议性独立评审。未变化的已确认内容和当前评审结果沿用，产品修改后针对新版本评审。[查看更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/RELEASE-0.1.2.md)。
+
+XMi V0.1.2 已有现有 Windows Codex 桌面安装上的有界验收记录；与公开 XDev/XMem 配套版本重新进行端到端联合验收，仍需单独完成。
 
 ## 开始使用
 
@@ -63,11 +69,11 @@ flowchart LR
 
 | 当前社区版源码 | 包版本 | 下载源码 |
 | --- | --- | --- |
-| XMi | `0.1.1` | [源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
+| XMi | `0.1.2` | [源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
 | XDev | `0.1.2` | [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) |
 | XMem | `0.1.1` | [源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) |
 
-表中为公开源码声明的包版本，同属 **V0.1 社区版系列**。`main` ZIP 随分支更新；需要复现时请记录 commit。使用配套安装说明与部署清单，升级时不要直接覆盖替换 XMem 运行目录。
+表中为公开源码声明的包版本。XMi 为 **V0.1.2**，XDev 与 XMem 保持表中所列社区包版本。`main` ZIP 随分支更新；需要复现时请记录 commit。使用配套安装说明与部署清单，升级时不要直接覆盖替换 XMem 运行目录。
 
 安装后，建议先从一个边界明确的小项目开始：
 
