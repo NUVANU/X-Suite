@@ -2,7 +2,7 @@
 
 当前公开源码配套：**XMi V0.1.2、XDev 0.1.2、XMem 0.1.1**。本指南保留原有联合配置入口；XMi V0.1.2 的本机桌面验收与新版三件套端到端联合验收分别记录。
 
-使用 Windows x64、Node 24.20.0、npm 11.19.0、pnpm 11.25.0 和支持本地插件的 Codex。将三个源码 ZIP 解压到长期保留的本地目录。下文假定目录为 `C:\XSuite\XMi`、`C:\XSuite\XDev` 和 `C:\XSuite\XMem`。三个版本的下载链接见 [README](README.md)。
+使用 Windows x64、Node 24.20.0、npm 11.19.0、pnpm 11.25.0 和支持本地插件的 Codex。下载并解压 XMi V0.1.2 [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip)（也可选 [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip)），以及 XDev/XMem 源码 ZIP，放到长期保留的本地目录。XMi 的 [发布页](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) 附有 [SHA256SUMS.txt](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt)，请核对下载包；该发布页也记录依赖审计已知问题。下文假定目录为 `C:\XSuite\XMi`、`C:\XSuite\XDev` 和 `C:\XSuite\XMem`。三个版本的下载链接见 [README](README.md)。
 
 准备一个新项目目录 `C:\XSuite\project`，在里面创建一个可供 XMem 记录摘要的 `README.md`。以下步骤会创建新的 XMi 数据目录、XMem 运行目录和 XDev 项目配置。
 

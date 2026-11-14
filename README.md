@@ -67,13 +67,13 @@ XMi V0.1.2 has a scoped acceptance record for an existing Windows Codex desktop 
 
 The documented community setup uses Windows x64, Node.js **24.20.0**, npm **11.19.0**, pnpm **11.25.0**, and a Codex installation that supports the local plugin entry points described in the guide. Dependencies require an initial download; Node.js and dependencies are not bundled as a one-click desktop installer.
 
-| Current community source | Package version | Download source |
+| Community component | Package version | Downloads |
 | --- | --- | --- |
-| XMi | `0.1.2` | [Source ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
+| XMi | `0.1.2` | [Lite install ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [SHA-256](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
 | XDev | `0.1.2` | [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) |
 | XMem | `0.1.1` | [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) |
 
-These are the package versions declared by the public source. XMi is at **V0.1.2**; XDev and XMem retain the listed community package versions. A `main` ZIP follows the branch; record the commit if you need a reproducible setup. Use the matching installation instructions and deployment manifest rather than swapping an XMem runtime directory in place.
+These are the package versions declared by the public source. XMi is at **V0.1.2**; XDev and XMem retain the listed community package versions. XMi downloads are pinned to [GitHub Release v0.1.2](https://github.com/NUVANU/XMi/releases/tag/v0.1.2). Choose the lite ZIP for installation or the source ZIP for development/tests, and verify it with the attached checksums. XDev/XMem `main` ZIPs follow their branches; record their commits for a reproducible setup. Use the matching installation instructions and deployment manifest rather than swapping an XMem runtime directory in place.
 
 After installation, try a small, concrete project first:
 

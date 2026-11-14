@@ -67,13 +67,13 @@ XMi V0.1.2 已有现有 Windows Codex 桌面安装上的有界验收记录；与
 
 当前社区版安装路径使用 Windows x64、Node.js **24.20.0**、npm **11.19.0**、pnpm **11.25.0**，以及支持指南所述本地插件入口的 Codex。首次安装需下载依赖；目前提供源码安装流程，未捆绑 Node.js，也不是一键桌面安装包。
 
-| 当前社区版源码 | 包版本 | 下载源码 |
+| 社区版组件 | 包版本 | 下载 |
 | --- | --- | --- |
-| XMi | `0.1.2` | [源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) |
+| XMi | `0.1.2` | [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [SHA-256 校验](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
 | XDev | `0.1.2` | [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) |
 | XMem | `0.1.1` | [源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) |
 
-表中为公开源码声明的包版本。XMi 为 **V0.1.2**，XDev 与 XMem 保持表中所列社区包版本。`main` ZIP 随分支更新；需要复现时请记录 commit。使用配套安装说明与部署清单，升级时不要直接覆盖替换 XMem 运行目录。
+表中为公开源码声明的包版本。XMi 为 **V0.1.2**，XDev 与 XMem 保持表中所列社区包版本。XMi 下载固定到 [GitHub Release v0.1.2](https://github.com/NUVANU/XMi/releases/tag/v0.1.2)：普通安装选轻量包，开发/测试选源码包，并对照附件校验值。XDev/XMem 的 `main` ZIP 随分支更新，需要复现时请记录 commit。使用配套安装说明与部署清单，升级时不要直接覆盖替换 XMem 运行目录。
 
 安装后，建议先从一个边界明确的小项目开始：
 
