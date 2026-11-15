@@ -2,121 +2,96 @@
 
 **Take your idea beyond the prototype.**
 
-An open-source engineering governance and evidence toolkit for AI-assisted development in Codex.
+An open-source engineering governance and evidence toolkit for AI-assisted development.
 
 **English** · [简体中文](README.zh-CN.md)
 
 [Get started](INSTALL.md) · [XMi](https://github.com/NUVANU/XMi) · [XDev](https://github.com/NUVANU/XDev) · [XMem](https://github.com/NUVANU/XMem)
 
-You describe a product, the AI starts coding, and the first demo looks promising. Then a small change breaks an earlier rule. A new chat forgets why a decision was made. “Tests passed” turns out to mean a different version was tested.
+The first AI-built demo looks promising. Then a small change breaks an earlier rule, a new chat loses a decision, or “tests passed” turns out to refer to yesterday's code.
 
-**X Suite makes the intent, project history, and evidence behind a delivery easier to inspect.** XMi clarifies what you want to build. XDev checks the scope and evidence of development. XMem keeps project knowledge traceable across sessions. Your coding host and model still do the development work.
-
-## Why try X Suite?
-
-| When AI development gets difficult | What X Suite adds |
-| --- | --- |
-| A short idea leaves important behavior undefined | **XMi:** guided clarification, visible open questions, and an owner-confirmed specification |
-| A helpful suggestion quietly becomes an extra feature | **XMi + XDev:** separate proposals from decisions and check work against the approved scope |
-| A new session loses a constraint or repeats a failed approach | **XMem:** retrieve project-bound history with sources, revisions, and applicability |
-| The agent says “done,” but the tested code is unclear | **XDev:** bind implementation, Review, and actual QA evidence to the same Job and candidate |
-| An interrupted operation leaves an uncertain result | **XDev + XMem:** reconcile original records before treating a retry or recovery as safe |
-
-These are the problems the toolkit is designed to address. They are not measured claims that X Suite eliminates hallucinations or guarantees a successful product.
+**X Suite makes intent, project history, and delivery evidence easier to inspect.** XMi clarifies what to build. XDev checks scope and delivery evidence. XMem preserves applicable engineering history. Your coding host and model still perform development.
 
 ## Three tools, clear responsibilities
 
-```mermaid
-flowchart LR
-    A["Your idea and constraints"] --> B["XMi: clarify and confirm"]
-    B --> C["XSpec: versioned specification"]
-    C --> D["XDev: scope and delivery checks"]
-    H["Host and model: code, tools, agents"] --> D
-    D --> E["Delivery evidence"]
-    M["XMem: project history and sources"] --> H
-    D --> M
+| Tool | What it adds | When it helps |
+| --- | --- | --- |
+| **XMi** | Guided clarification, owner-confirmed XSpec, version-bound architecture, and review handoff | Turn a product idea into agreed behavior and scope |
+| **XDev** | Lightweight governance at entry, changes/interruption, and delivery; candidate-bound Review/QA evidence and bounded recovery | Judge whether the actual change is ready to deliver |
+| **XMem** | Local engineering records, revisions, sources, bounded retrieval, and checkpoints | Carry constraints, decisions, failures, and unknowns across sessions |
+
+Use each tool independently or combine them. XMi is optional for an already clear task; XDev does not require creating a memory database for every project.
+
+## Why try it?
+
+| A common AI development problem | The suite's response |
+| --- | --- |
+| An idea leaves behavior undefined | XMi surfaces open questions before confirmation |
+| A suggestion becomes an unapproved feature | Preserve decisions and scope; inspect conformance in Review |
+| New sessions repeat a failed approach | Retrieve the original engineering record and its evidence |
+| Review and QA refer to different candidates | Bind stage records to the project, task, and actual files |
+| Interruption causes duplicate execution | Inspect original claims/results before bounded recovery |
+| Small operations accumulate excessive process | XDev routes ordinary reversible work to proportionate checks |
+
+## A typical flow
+
+```text
+Describe the product
+       ↓
+XMi: clarify → confirm → specification / architecture
+       ↓
+Host: search → design → code → debug → coordinate agents
+       ↕
+XMem: retrieve applicable history; save/read back key findings
+       ↓
+XDev: check current scope, independent Review, actual QA, delivery
 ```
 
-| Tool | The question it helps answer | Main outputs | License |
-| --- | --- | --- | --- |
-| [**XMi**](https://github.com/NUVANU/XMi) | What did the user actually agree to build? | Product model, decisions, acceptance criteria, XSpec | Apache-2.0 |
-| [**XDev**](https://github.com/NUVANU/XDev) | Does this candidate have the evidence needed for this delivery? | Job records, scope checks, Review and QA receipts, delivery status | MPL-2.0 |
-| [**XMem**](https://github.com/NUVANU/XMem) | What project knowledge is relevant, and where did it come from? | Versioned memories, source references, retrieval results, checkpoints | MPL-2.0 |
+The host owns tools, scheduling, sessions, permissions, and lifecycle. XDev is the governance layer; XMem persists evidence. Historical content is context, not fresh execution authority. Hashes check content consistency, not whether a conclusion is true.
 
-X Suite is the integration and documentation repository. The component source code stays in its own repositories. XMi can be used independently; the documented joint development setup pairs XDev with XMem. You do not need to write an XSpec for every small code change.
+## Current public sources and downloads
 
-## A concrete example: a community tool-booking app
+| Component | Version | Download / documentation |
+| --- | --- | --- |
+| XMi | **0.1.2** | [Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) · [Lightweight ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [Checksums](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
+| XDev | **0.1.3 — R4 / MECH-02 source update** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
+| XMem | **0.1.2 — R6 RestoreBudget source update** | [Source](https://github.com/NUVANU/XMem) · [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
-Suppose you want neighbors to borrow shared tools. You know the experience you want, but not the code.
+XDev/XMem main-branch ZIPs are moving source archives, not fixed binary Release assets; record the commit when reproducing a result. XMi's release notes include known dependency-audit findings.
 
-1. **Clarify with XMi.** Decide who can book, how conflicts are handled, whether a borrower can cancel, and what happens when a tool is unavailable. Keep undecided rules open. After solution confirmation, XMi V0.1.2 derives the current 24-chapter architecture and uses supported host capabilities to review requirements and architecture together.
-2. **Develop with the host, check with XDev.** Work within the agreed files and behavior. Keep implementation, independent Review, and actual QA results separate and tied to the candidate being delivered.
-3. **Continue with XMem.** In a later session, retrieve the cancellation decision and earlier failure evidence with their sources. Check that the rule still applies before using it.
+### What changed in this update?
 
-This is an illustrative workflow, not an A/B benchmark result. Product decisions, exports, task authorization, code implementation, and delivery acceptance remain separate steps.
+**XDev:** new formal Node work uses one v5 contract without a three-tier selector. Ordinary reversible operations use necessary checks; product changes retain non-author Review and actual QA. Shallow integration keeps the host in charge of development.
 
-## XMi V0.1.2 update
+**XMem:** reserve recovery-interpretation bytes before context compilation, then check the combined context/continuity/interpretation against the unchanged budget. Mandatory material is preserved or fails explicitly; optional records can remain references.
 
-The current XMi source adds incremental confirmation, the default **确认** reply, a version-bound 24-chapter architecture, and advisory independent review through the existing host capability. Unchanged confirmed content and current review results are reused; product changes are reviewed against their new version. [See release details](https://github.com/NUVANU/XMi/blob/main/docs/public/RELEASE-0.1.2.md).
-
-XMi V0.1.2 has a scoped acceptance record for an existing Windows Codex desktop installation. A new end-to-end joint acceptance with the published XDev/XMem pair remains a separate check.
+**Integration:** prefer the host's directly configured native XMem connection. The older XDev bridge remains restricted to qualified builds/storage modes; these new sources do not automatically establish a new bridge qualification or joint end-to-end acceptance.
 
 ## Get started
 
-**Start with [the Windows installation guide](INSTALL.md).** It covers the three repositories, the local plugin configuration, the XMem runtime, and explicit project binding.
+Follow [INSTALL.md](INSTALL.md) for the Windows/Codex source path. Keep source/runtime directories, initialize actual projects with consent, and verify the loaded services after reconnecting. Installation, project binding, independent Review, actual QA, and release acceptance are separate checks.
 
-The documented community setup uses Windows x64, Node.js **24.20.0**, npm **11.19.0**, pnpm **11.25.0**, and a Codex installation that supports the local plugin entry points described in the guide. Dependencies require an initial download; Node.js and dependencies are not bundled as a one-click desktop installer.
+Once set up, an example request is:
 
-| Community component | Package version | Downloads |
-| --- | --- | --- |
-| XMi | `0.1.2` | [Lite install ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [SHA-256](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
-| XDev | `0.1.2` | [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) |
-| XMem | `0.1.1` | [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) |
+> Clarify the unresolved product decisions with XMi. Let the host implement the confirmed scope. Use configured XMem for applicable history and XDev to inspect entry, relevant changes, and delivery. Report the actual candidate, evidence, and remaining unknowns.
 
-These are the package versions declared by the public source. XMi is at **V0.1.2**; XDev and XMem retain the listed community package versions. XMi downloads are pinned to [GitHub Release v0.1.2](https://github.com/NUVANU/XMi/releases/tag/v0.1.2). Choose the lite ZIP for installation or the source ZIP for development/tests, and verify it with the attached checksums. XDev/XMem `main` ZIPs follow their branches; record their commits for a reproducible setup. Use the matching installation instructions and deployment manifest rather than swapping an XMem runtime directory in place.
+## Evidence and limits
 
-After installation, try a small, concrete project first:
+The upstream XDev R4 core has scoped local acceptance. MECH-02 passed independent Review and six host-policy scenarios: three executed fixture operations plus three decision cases. XMem's budget fix passed an 89/89 regression package and a separate overlapping 19/19 supplementary Core package. These are component results, not a benchmark proving model accuracy, lower cost, or universal installation support.
 
-```text
-Use XMi to clarify a community tool-booking app with me.
-Show the current scope, open questions, and suggestions separately.
-Do not invent rules I have not decided. Show the complete checklist
-before asking me to confirm it.
-```
+The XDev MCP runner supports an exact bounded Node command, not general browser/game-engine QA. Other hosts, operating systems, fresh-machine setup, unattended recovery, and the newly combined suite need their own validation. No bug-reduction, recall-accuracy, or token-saving percentage is claimed here.
 
-When you move to development, check the XDev project binding with `xdev_context`. Memory retrieval and project/task permissions are configured explicitly; having a plugin installed does not grant it permission to execute a task.
+Memory is stored locally; retrieved content may still be sent to the coding host's model provider. Keep credentials, private conversations, and live databases out of public repositories.
 
-## Technical foundations
+## Explore and contribute
 
-- **Skills + MCP:** conversational guidance and structured tools, with validated contracts for project state and operations.
-- **Explicit confirmation:** XMi stores confirmed product decisions through its domain services; chat text alone is not the authoritative model.
-- **Version and content binding:** project identifiers, task versions, file references, and SHA-256 hashes help detect stale, changed, or mismatched inputs.
-- **Evidence-based delivery:** XDev records distinct implementation, Review, and actual QA stages. A status claim must match the relevant records.
-- **Project-bound memory:** XMem uses local SQLite storage, source references, versioned records, and explicit retrieval with bounded payloads.
-- **Recovery with original records:** reconcile an interrupted operation with its original evidence rather than silently starting over or erasing an unknown result.
-
-A hash checks content consistency; it does not authenticate a person or prove that the content is correct. The host still controls tool execution, sandbox permissions, model calls, and agent lifecycle.
-
-## Current scope and boundaries
-
-The published setup focuses on a local Windows/Codex workflow. Joint acceptance covered a bounded path: XMi chat confirmation and XSpec export, XDev controlled intake/Review/Node QA, and XMem saving and reading project history in a new session. This does not establish that every fresh-machine installation or failure path has passed.
-
-XDev’s documented MCP QA runner supports a frozen Node command with a bounded execution window; it is not browser, game-engine, or general end-to-end QA. See the [community workflow](https://github.com/NUVANU/XDev/blob/main/docs/COMMUNITY.md) for its actual scope.
-
-XMem retrieval does not promise that a model will use every returned fact correctly. The suite does not include a hosted service or replace your host/model subscription. New hosts, operating systems, and later local development builds need their own validation.
-
-Local storage also does not mean all content stays offline: the coding host may send retrieved context to its model provider under that provider’s settings and policies.
-
-## Explore, contribute, or report a problem
-
-- [Install the suite](INSTALL.md)
-- [XMi: features, architecture, and known issues](https://github.com/NUVANU/XMi)
-- [XDev: project binding, supervised work, and QA recovery](https://github.com/NUVANU/XDev/blob/main/docs/COMMUNITY.md)
-- [XMem: engineering memory and integration](https://github.com/NUVANU/XMem)
+- [XMi workflow](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md)
+- [XDev community workflow](https://github.com/NUVANU/XDev/blob/main/docs/COMMUNITY.md)
+- [XMem setup and daily use](https://github.com/NUVANU/XMem/blob/main/docs/STANDALONE-SEMI-AUTO.md)
 - [Report an integration issue](https://github.com/NUVANU/X-Suite/issues)
 
-For a useful issue, include the component versions/commit IDs, host version, a small reproducible example, and redacted error output. Keep private projects, credentials, personal conversations, and memory databases out of public issues.
+Include component commits, host/runtime versions, a small reproduction, and redacted receipts when reporting issues.
 
 ## License
 
-This repository’s integration material is licensed under [Apache-2.0](LICENSE). XMi uses Apache-2.0; XDev and XMem use MPL-2.0. Each component and third-party dependency retains its own license.
+This repository's integration material uses [Apache-2.0](LICENSE). XMi uses Apache-2.0; XDev and XMem use MPL-2.0. Dependencies retain their own licenses.

@@ -1,12 +1,18 @@
-# X Suite 社区版安装
+# X Suite installation / 社区版安装
 
-当前公开源码配套：**XMi V0.1.2、XDev 0.1.2、XMem 0.1.1**。本指南保留原有联合配置入口；XMi V0.1.2 的本机桌面验收与新版三件套端到端联合验收分别记录。
+Public source set: **XMi 0.1.2 · XDev 0.1.3 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
 
-使用 Windows x64、Node 24.20.0、npm 11.19.0、pnpm 11.25.0 和支持本地插件的 Codex。下载并解压 XMi V0.1.2 [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip)（也可选 [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip)），以及 XDev/XMem 源码 ZIP，放到长期保留的本地目录。XMi 的 [发布页](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) 附有 [SHA256SUMS.txt](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt)，请核对下载包；该发布页也记录依赖审计已知问题。下文假定目录为 `C:\XSuite\XMi`、`C:\XSuite\XDev` 和 `C:\XSuite\XMem`。三个版本的下载链接见 [README](README.md)。
+本次采用宿主直接连接 XMem 的方式。旧 `setup-community-memory.ts` 联合桥接安装入口对应旧版构建，不适用于本次源码组合；不要通过改白名单或旧指纹强行接入。新版组件源码同步与新版三件套端到端联合验收分别记录。
 
-准备一个新项目目录 `C:\XSuite\project`，在里面创建一个可供 XMem 记录摘要的 `README.md`。以下步骤会创建新的 XMi 数据目录、XMem 运行目录和 XDev 项目配置。
+## 1. Download / 下载
 
-## 安装 XMi
+- XMi: [v0.1.2 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.2), [lightweight package](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip), [source package](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip), [SHA256SUMS](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt). Read the release's known dependency findings.
+- XDev: [public source](https://github.com/NUVANU/XDev) / [main ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip).
+- XMem: [public source](https://github.com/NUVANU/XMem) / [main ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip).
+
+Main ZIPs move with the branch; record the commit for reproducibility. The following examples use `C:\XSuite\XMi`, `C:\XSuite\XDev`, and `C:\XSuite\XMem`. Replace paths with your actual directories. 不要覆盖已有源码、运行目录或现场数据库。
+
+## 2. XMi
 
 ```powershell
 Set-Location C:\XSuite\XMi
@@ -17,38 +23,85 @@ codex plugin marketplace add $xmi.plugin_directory --json
 codex plugin add xmi@xmi-local --json
 ```
 
-在 Codex 的原生插件入口审阅 XMi 的钩子并按界面操作。新开对话后，可以用 XMi 梳理项目需求。正式确认采用对话中列出的完整待处理清单，默认回复“确认”；旧回复保持兼容。单项修改只列本次待处理项，其余已确认内容沿用。
+Review the plugin/hook prompts in Codex and reopen the connection. See [XMi installation](https://github.com/NUVANU/XMi/blob/main/docs/public/INSTALL.md) and [workflow](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md) for confirmation, version-bound architecture, review, and separately authorized export.
 
-V0.1.2 在方案确认后自动生成同版本 24 章架构，再通过宿主支持的独立 Agent 能力评审需求与架构。报告、架构生成和评审启动不追加产品确认；导出仍需对确切包另行授权。详见 [XMi 工作流](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md)。
+已有 XMi 升级先备份并保留数据路由，按其升级说明更新入口；首次配置工具不接管已有数据库。
 
-上述命令面向新安装。升级已有 XMi 时，先关闭连接、备份并保留原数据路由及旧安装；首次配置工具不会接管已有数据库。按照 [XMi 升级说明](https://github.com/NUVANU/XMi/blob/main/docs/public/INSTALL.md) 更新入口，重连后核对实际版本，不覆盖运行中的 SQLite。
-
-## 构建 XMem 并配置 XDev
+## 3. Build XMem / 构建独立 XMem
 
 ```powershell
 Set-Location C:\XSuite\XMem
 npm.cmd ci --ignore-scripts
+npm.cmd run check
 npm.cmd run build
-node tools/stage-runtime.mjs C:\XSuite\xmem-runtime
-Set-Location C:\XSuite\xmem-runtime
+node tools/stage-runtime.mjs C:\XSuite\xmem-runtime-0.1.2
+Set-Location C:\XSuite\xmem-runtime-0.1.2
 npm.cmd ci --omit=dev --ignore-scripts
+```
 
+The target must be a new absolute directory. The locked dependency tree includes a Windows x64 SQLite native package; other platforms need separate validation. Keep this runtime in place.
+
+通过 Codex 支持的 MCP 设置注册名称为 `xmem` 的服务，命令与参数分别填写（不是一整串带引号命令）：
+
+```text
+command: C:\Program Files\nodejs\node.exe
+args: ["C:\\XSuite\\xmem-runtime-0.1.2\\dist\\src\\engineering-companion.js"]
+```
+
+Use `(Get-Command node).Source` to find your actual Node path. If using the Codex CLI instead of the settings UI:
+
+```powershell
+codex mcp add xmem -- node C:\XSuite\xmem-runtime-0.1.2\dist\src\engineering-companion.js
+```
+
+Register once. Existing `xmem` settings must be inspected and updated, not duplicated. This creates a connection, not an enabled project database.
+
+## 4. Enable memory for the actual project / 明确项目与记忆政策
+
+With the owner's consent, initialize the chosen existing project using the [XMem first-use recipe](https://github.com/NUVANU/XMem/blob/main/docs/STANDALONE-SEMI-AUTO.md#executable-owner-first-use-recipe). It gives exact CLI commands and reviewed JSON examples for:
+
+1. Project initialization and status.
+2. Explicit enabled policy, roles, snapshot files, capture categories, and budgets.
+3. `PROJECT_LOCAL` or an explicitly selected empty local directory.
+4. Policy/storage readback and diagnostics.
+
+本次不自动替已有项目配置 `consent:true`，也不搬迁现场数据。已配置项目使用原有政策与真实 location hash；已有数据不能通过修改路径直接迁移。配置完成后，新会话调用 discover/status/storage 并绑定实际 task/version，再检索、保存、完整读回和 checkpoint。空历史返回 EMPTY 是正常状态。
+
+## 5. Install XDev / 安装 XDev
+
+```powershell
 Set-Location C:\XSuite\XDev
 pnpm.cmd install --frozen-lockfile --ignore-scripts
 npm.cmd --prefix mcp ci --ignore-scripts
-$suite = node mcp/setup-community-memory.ts --project C:\XSuite\project --data C:\XSuite\xdev-data --runtime C:\XSuite\xmem-runtime --snapshot README.md --consent | ConvertFrom-Json
-$xmemArgs = $suite.xmem[1..($suite.xmem.Count - 1)]
-codex plugin marketplace add $suite.xdev_plugin_directory --json
-codex plugin add xdev@xsuite-community-local --json
-codex @xmemArgs
+npm.cmd run typecheck
+codex plugin marketplace add . --json
+codex plugin add xdev@xdev-community-local --json
 ```
 
-`--consent` 允许初始化这个新项目的记忆存储与项目设置，并为此项目配置显式回读、保存、对账和检查点。每条公开来源仍需在项目配置中按文件及其摘要登记。开发任务写入和 QA 执行权限须按任务另行设置。
+The included marketplace installs XDev Skills and its default MCP entry. Reconnect/reopen and inspect `xdev_context`: a new unbound installation correctly returns **UNBOUND**, null project roots, and false task permissions. It does not pick your cwd as the project.
 
-从项目目录新开 Codex 对话，启用 XDev，然后调用 `xdev_context` 查看绑定项目，并执行 `xdev_memory` 的 `recall`。新项目没有历史条目时，空结果是预期行为。XMem 独立入口也可通过 `xmem_standalone_status` 查询这个项目的策略和社区版版本。
+若宿主只支持直接 MCP 注册，可运行 `node --experimental-strip-types mcp/configure.ts --host codex` 获得实际命令；仅加载 MCP 不等于加载 Skills。不要在插件之外再重复注册同名服务。
 
-## 项目和升级
+For approved product work, follow [XDev local project setup](https://github.com/NUVANU/XDev/blob/main/docs/LOCAL-MCP.zh.md). The supported initialization command uses the existing actual project and a new external data directory:
 
-保留源码及运行目录的绝对路径。安装脚本根据配套 XMem 构建生成部署清单，启动时验证程序和清单。更换配套构建时，为新版准备新的运行目录，并按新版指南配置，现有记忆的迁移需要单独处理。
+```powershell
+node --experimental-strip-types mcp/local.ts init --project-root C:\Projects\my-project --data-root C:\XSuite\my-project-xdev-data --project-id my-project
+```
 
-同一 Codex 配置中只保留一份 XDev 和一份 XMem 注册。已有同名连接时，先在独立的 Codex 配置中按上述步骤验证。GitHub 的下载包和安装流程仅包含社区版源码与公开依赖。
+Both parents must exist; the new data directory must be separate from the project. Initialization prints the exact configuration and connection descriptor but grants no Job/QA authority. Bind that configuration through one supported host connection, reconnect, then inspect context. Do not edit the installed cache.
+
+新正式 Node 任务按 [v5 统一合同](https://github.com/NUVANU/XDev/blob/main/docs/R4-UNIFIED-CONTRACT.zh.md) 准备当前需求、候选、验收与有限授权。项目初始化、写 Job、实际 QA、恢复和 XSpec 接收的权限分别设置；用户不需要手写 UUID，协调者从真实确认来源准备输入。
+
+## 6. Verify / 分开核验
+
+- XMi: actual plugin version and configured data route; prepare is not confirmation or export.
+- XDev: actual 0.1.3 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
+- XMem: actual 0.1.2 package/runtime status, explicit project/task/storage, permitted save, complete readback, and a later-session checkpoint recovery.
+
+XDev 使用宿主原生 XMem 工具，不要求旧 bridge 配置；历史不是授权。安装成功、当前会话可见、实际执行与新版联合验收是不同结论。未验证的宿主、功能或组合应如实报告。
+
+## 7. Upgrade and rollback / 升级与回退
+
+Keep old runtimes and a consistent database/artifact backup. Build the new version in a new directory; update only the intended connection, reconnect, and read back the runtime identity. Public packaging creates a new fingerprint; do not relabel an old fingerprint as a new version. An open chat may still use an old process.
+
+迁移与业务开发分开处理；新库已有写入后，不直接恢复旧副本覆盖新数据。UNKNOWN 先按原身份对账，不删锁、换 key 重试或修改盘根目录权限。详细限制分别见三个组件文档。
