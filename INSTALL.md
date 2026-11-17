@@ -1,6 +1,6 @@
 # X Suite installation / 社区版安装
 
-Public source set: **XMi 0.1.2 · XDev 0.1.3 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
+Public source set: **XMi 0.1.2 · XDev 0.1.4 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
 
 本次采用宿主直接连接 XMem 的方式。旧 `setup-community-memory.ts` 联合桥接安装入口对应旧版构建，不适用于本次源码组合；不要通过改白名单或旧指纹强行接入。新版组件源码同步与新版三件套端到端联合验收分别记录。
 
@@ -95,7 +95,7 @@ Both parents must exist; the new data directory must be separate from the projec
 ## 6. Verify / 分开核验
 
 - XMi: actual plugin version and configured data route; prepare is not confirmation or export.
-- XDev: actual 0.1.3 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
+- XDev: actual 0.1.4 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
 - XMem: actual 0.1.2 package/runtime status, explicit project/task/storage, permitted save, complete readback, and a later-session checkpoint recovery.
 
 XDev 使用宿主原生 XMem 工具，不要求旧 bridge 配置；历史不是授权。安装成功、当前会话可见、实际执行与新版联合验收是不同结论。未验证的宿主、功能或组合应如实报告。

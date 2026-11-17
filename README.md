@@ -92,7 +92,7 @@ Hashes check content consistency; they do not independently prove a conclusion i
 | Component | Version | Download / documentation |
 | --- | --- | --- |
 | XMi | **0.1.2** | [Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) · [Lightweight ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [Checksums](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
-| XDev | **0.1.3** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
+| XDev | **0.1.4** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261117.md) |
 | XMem | **0.1.2** | [Source](https://github.com/NUVANU/XMem) · [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
 Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)**. The documented local path focuses on Windows/Codex. XDev/XMem main ZIPs change with the branch; record the commit for reproduction. Release notes retain known issues and compatibility boundaries.
@@ -100,6 +100,12 @@ Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/mai
 After installation and configuration checks, ask your agent:
 
 > Develop the confirmed requirements. Use XDev at key stages to check scope and delivery evidence. Retrieve applicable history and save key records through configured XMem. Finish by explaining what changed, what was actually verified, and what remains unverified.
+
+## XDev 0.1.4: continue within the approved task
+
+After a stage or current Job ends, the host coordinator checks the overall goal and remaining acceptance criteria. It continues a specifically authorized, unblocked next step without waiting for another generic “continue”. Original role finals, independent Review, actual QA, deadlines, and finite attempts remain required.
+
+Blockers stop their dependent paths; UNKNOWN is reconciled under the original identity. This is bounded coordination, not background execution or automatic renewal of authority. See the [update and validation scope](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261117.md).
 
 ## Current progress and direction
 
