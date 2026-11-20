@@ -1,6 +1,6 @@
 # X Suite installation / 社区版安装
 
-Public source set: **XMi 0.1.2 · XDev 0.1.4 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
+Public source set: **XMi 0.1.2 · XDev 0.1.5 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
 
 本次采用宿主直接连接 XMem 的方式。旧 `setup-community-memory.ts` 联合桥接安装入口对应旧版构建，不适用于本次源码组合；不要通过改白名单或旧指纹强行接入。新版组件源码同步与新版三件套端到端联合验收分别记录。
 
@@ -88,14 +88,22 @@ For approved product work, follow [XDev local project setup](https://github.com/
 node --experimental-strip-types mcp/local.ts init --project-root C:\Projects\my-project --data-root C:\XSuite\my-project-xdev-data --project-id my-project
 ```
 
-Both parents must exist; the new data directory must be separate from the project. Initialization prints the exact configuration and connection descriptor but grants no Job/QA authority. Bind that configuration through one supported host connection, reconnect, then inspect context. Do not edit the installed cache.
+This example keeps the external layout, which is required for XSpec intake, the legacy XMem bridge, and external implementation-artifact adoption. Both parents must exist and the new data root must be separate from the project. Initialization prints the exact configuration/connection descriptor but grants no Job/QA authority. Bind one supported connection, reconnect, and inspect context; do not edit installed cache.
+
+For ordinary supervised work, 0.1.5 additionally supports the project’s direct `.xdev` child:
+
+```powershell
+node --experimental-strip-types mcp/local.ts init --project-root C:\Projects\my-project --data-root C:\Projects\my-project\.xdev --project-id my-project
+```
+
+其中 control、input 与 local-config.json 使用固定位置。初始化不覆盖已有 `.xdev`，也不迁移现有 Job。候选清单只排除这三个运行数据路径，其他 `.xdev` 产品文件仍会检查。需要上述高级工作流时，继续使用前面的外置示例；原生 XMem 与旧 bridge 分开看待。
 
 新正式 Node 任务按 [v5 统一合同](https://github.com/NUVANU/XDev/blob/main/docs/R4-UNIFIED-CONTRACT.zh.md) 准备当前需求、候选、验收与有限授权。项目初始化、写 Job、实际 QA、恢复和 XSpec 接收的权限分别设置；用户不需要手写 UUID，协调者从真实确认来源准备输入。
 
 ## 6. Verify / 分开核验
 
 - XMi: actual plugin version and configured data route; prepare is not confirmation or export.
-- XDev: actual 0.1.4 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
+- XDev: actual 0.1.5 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
 - XMem: actual 0.1.2 package/runtime status, explicit project/task/storage, permitted save, complete readback, and a later-session checkpoint recovery.
 
 XDev 使用宿主原生 XMem 工具，不要求旧 bridge 配置；历史不是授权。安装成功、当前会话可见、实际执行与新版联合验收是不同结论。未验证的宿主、功能或组合应如实报告。

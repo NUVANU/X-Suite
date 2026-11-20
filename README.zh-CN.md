@@ -92,7 +92,7 @@ X Suite 将质量管理的方法带到 AI 代码工程：通过 **XMi、XDev、X
 | 组件 | 版本 | 下载与说明 |
 | --- | --- | --- |
 | XMi | **0.1.2** | [发布页](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) · [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip) · [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip) · [校验和](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt) |
-| XDev | **0.1.4** | [仓库](https://github.com/NUVANU/XDev) · [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261117.md) |
+| XDev | **0.1.5** | [仓库](https://github.com/NUVANU/XDev) · [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) |
 | XMem | **0.1.2** | [仓库](https://github.com/NUVANU/XMem) · [源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
 按 **[安装指南](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)** 开始，当前说明以 Windows/Codex 本地路径为主。XDev、XMem 的 main ZIP 随提交变化，复现时请记录 commit；发行说明保留已知问题和兼容范围。
@@ -101,11 +101,11 @@ X Suite 将质量管理的方法带到 AI 代码工程：通过 **XMi、XDev、X
 
 > 请按已确认的需求开发。在关键节点用 XDev 核对范围与交付依据；通过已配置的 XMem 查找适用历史并保存关键记录。最后说明这次改了什么、实际验证了什么、还有什么未验证。
 
-## XDev 0.1.4：在已批准任务内继续推进
+## XDev 0.1.5：任务数据可放在项目内
 
-阶段或当前 Job 结束后，宿主协调者核对总目标与剩余验收条件；还有具体授权覆盖、前置齐备的下一步时直接接续，不再等待用户重复说“继续”。各角色的自然 final、非作者 Review、实际 QA、截止时间和有限次数保持。
+普通受监督任务可显式将 XDev 配置、输入和控制记录放在工程直属 `.xdev` 中。候选清单只排除三个保留的运行数据路径，其他 `.xdev` 产品文件仍正常检查；初始化保持权限默认关闭，不覆盖或迁移已有记录。
 
-阻塞停止其依赖路径，UNKNOWN 按原身份对账。这是有界协调，不是后台执行或自动续批权限。详见[更新与验证范围](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261117.md)。
+XSpec 接收、旧 XMem bridge 与外部实施产物采用继续使用外置布局，原生 XMem 独立配置。有界持续推进、非作者 Review、实际 QA 与有限授权保持。详见[更新与支持范围](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md)及[安装选项](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)。
 
 ## 当前进展与后续方向
 
