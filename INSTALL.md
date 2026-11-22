@@ -1,12 +1,12 @@
 # X Suite installation / 社区版安装
 
-Public source set: **XMi 0.1.2 · XDev 0.1.5 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
+Public source set: **XMi 0.1.3 · XDev 0.1.5 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
 
 本次采用宿主直接连接 XMem 的方式。旧 `setup-community-memory.ts` 联合桥接安装入口对应旧版构建，不适用于本次源码组合；不要通过改白名单或旧指纹强行接入。新版组件源码同步与新版三件套端到端联合验收分别记录。
 
 ## 1. Download / 下载
 
-- XMi: [current source / 当前源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip), [2026-11-22 update](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md). Package version remains 0.1.2; record the commit. The [earlier v0.1.2 Release and fixed assets](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) do not contain this update.
+- XMi: [v0.1.3 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3), [lightweight ZIP / 轻量包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip), [source ZIP / 源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip), [SHA256SUMS](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt), [release notes / 发行说明](https://github.com/NUVANU/XMi/blob/main/docs/public/RELEASE-0.1.3.md). Both ZIPs need Node.js and dependencies; verify the archive checksum before installing. Neither includes personal state. The earlier v0.1.2 release stays unchanged.
 - XDev: [public source](https://github.com/NUVANU/XDev) / [main ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip).
 - XMem: [public source](https://github.com/NUVANU/XMem) / [main ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip).
 

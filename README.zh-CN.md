@@ -91,19 +91,19 @@ X Suite 将质量管理的方法带到 AI 代码工程：通过 **XMi、XDev、X
 
 | 组件 | 版本 | 下载与说明 |
 | --- | --- | --- |
-| XMi | **0.1.2** | [当前源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md) · [此前固定发行包](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) |
+| XMi | **0.1.3** | [发布页](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) · [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip) · [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip) · [校验和](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt) |
 | XDev | **0.1.5** | [仓库](https://github.com/NUVANU/XDev) · [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) |
 | XMem | **0.1.2** | [仓库](https://github.com/NUVANU/XMem) · [源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
-按 **[安装指南](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)** 开始，当前说明以 Windows/Codex 本地路径为主。三个组件的 main ZIP 均随提交变化，复现时请记录 commit；XMi 旧 Release 附件不含本次源码更新；发行说明保留已知问题和兼容范围。
+按 **[安装指南](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)** 开始，当前说明以 Windows/Codex 本地路径为主。XMi 表内链接指向固定 v0.1.3 发行包；XDev、XMem 的 main ZIP 随提交变化，复现时请记录 commit；发行说明保留已知问题和兼容范围。
 
 安装并核对配置后，可以这样向 Agent 提出任务：
 
 > 请按已确认的需求开发。在关键节点用 XDev 核对范围与交付依据；通过已配置的 XMem 查找适用历史并保存关键记录。最后说明这次改了什么、实际验证了什么、还有什么未验证。
 
-## XMi 最新源码：少重复，保留确认依据
+## XMi 0.1.3：少重复，保留确认依据
 
-本次 2026-11-22 源码更新仍使用版本 0.1.2。新增有界清单交付预检、按版本增量读取与短校验回执，适用时沿用已确认的蓝图选择；完整清单、真实回复和阻塞校验继续保留。独立的可选本地原型适配器支持展示首版流程、集中处理选择并输出 16 文件原型规格，普通 MCP 默认工具目录保持原样。
+本次 v0.1.3 将 2026-11-22 更新整理为固定源码包和轻量安装包，附 SHA-256 校验和；旧 v0.1.2 保持原样。新增有界清单交付预检、按版本增量读取与短校验回执，适用时沿用已确认的蓝图选择；完整清单、真实回复和阻塞校验继续保留。独立的可选本地原型适配器支持展示首版流程、集中处理选择并输出 16 文件原型规格，普通 MCP 默认工具目录保持原样。
 
 升级前备份已有数据并更新读取器；重新审阅钩子、连接后再核验加载。旧读取器兼容性及有限验证范围见[XMi 更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md)。本次发布同步不等于新版三件套已完成联合端到端验收。
 

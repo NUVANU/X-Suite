@@ -91,19 +91,19 @@ Hashes check content consistency; they do not independently prove a conclusion i
 
 | Component | Version | Download / documentation |
 | --- | --- | --- |
-| XMi | **0.1.2** | [Current source ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md) · [Earlier fixed release](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) |
+| XMi | **0.1.3** | [Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) · [Lightweight ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip) · [Checksums](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt) |
 | XDev | **0.1.5** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) |
 | XMem | **0.1.2** | [Source](https://github.com/NUVANU/XMem) · [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
-Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)**. The documented local path focuses on Windows/Codex. All component main ZIPs change with the branch; record the commit for reproduction. Earlier XMi Release attachments do not include this source update. Release notes retain known issues and compatibility boundaries.
+Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)**. The documented local path focuses on Windows/Codex. The XMi links above point to fixed v0.1.3 assets. XDev/XMem main ZIPs change with the branch; record the commit for reproduction. Release notes retain known issues and compatibility boundaries.
 
 After installation and configuration checks, ask your agent:
 
 > Develop the confirmed requirements. Use XDev at key stages to check scope and delivery evidence. Retrieve applicable history and save key records through configured XMem. Finish by explaining what changed, what was actually verified, and what remains unverified.
 
-## Latest XMi source: less repetition, traceable decisions
+## XMi 0.1.3: less repetition, traceable decisions
 
-The 2026-11-22 source update keeps version 0.1.2. It adds bounded checklist-delivery preflight, version-bound incremental reads and short validation receipts, plus reuse of confirmed blueprint choices where eligible. Complete decision lists, genuine replies and blocking checks remain. An optional local prototype adapter presents first-version flows, groups choices and exports a sixteen-file prototype specification; the ordinary MCP catalog is unchanged by default.
+V0.1.3 packages the 2026-11-22 update as fixed source/lightweight ZIPs with SHA-256 checksums; v0.1.2 remains unchanged. It adds bounded checklist-delivery preflight, version-bound incremental reads and short validation receipts, plus reuse of confirmed blueprint choices where eligible. Complete decision lists, genuine replies and blocking checks remain. An optional local prototype adapter presents first-version flows, groups choices and exports a sixteen-file prototype specification; the ordinary MCP catalog is unchanged by default.
 
 Back up existing data and update its reader before upgrading; review the changed hooks and reconnect before checking active loading. See [compatibility and scoped verification](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md). This publication does not establish end-to-end acceptance of the new three-component combination.
 
