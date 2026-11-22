@@ -6,7 +6,7 @@ Public source set: **XMi 0.1.2 · XDev 0.1.5 · XMem 0.1.2**. Windows x64 / Node
 
 ## 1. Download / 下载
 
-- XMi: [v0.1.2 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.2), [lightweight package](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-lite.zip), [source package](https://github.com/NUVANU/XMi/releases/download/v0.1.2/xmi-0.1.2-source.zip), [SHA256SUMS](https://github.com/NUVANU/XMi/releases/download/v0.1.2/SHA256SUMS.txt). Read the release's known dependency findings.
+- XMi: [current source / 当前源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip), [2026-11-22 update](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md). Package version remains 0.1.2; record the commit. The [earlier v0.1.2 Release and fixed assets](https://github.com/NUVANU/XMi/releases/tag/v0.1.2) do not contain this update.
 - XDev: [public source](https://github.com/NUVANU/XDev) / [main ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip).
 - XMem: [public source](https://github.com/NUVANU/XMem) / [main ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip).
 
@@ -25,7 +25,7 @@ codex plugin add xmi@xmi-local --json
 
 Review the plugin/hook prompts in Codex and reopen the connection. See [XMi installation](https://github.com/NUVANU/XMi/blob/main/docs/public/INSTALL.md) and [workflow](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md) for confirmation, version-bound architecture, review, and separately authorized export.
 
-已有 XMi 升级先备份并保留数据路由，按其升级说明更新入口；首次配置工具不接管已有数据库。
+已有 XMi 升级先备份并保留数据路由，按其升级说明更新入口；首次配置工具不接管已有数据库。新增蓝图绑定事件须由新版读取器读取，旧版回退须使用升级前备份。通过宿主入口审阅 Stop / UserPromptSubmit 钩子并重新连接，再核对实际加载；默认安装无需启用可选原型适配器。
 
 ## 3. Build XMem / 构建独立 XMem
 
