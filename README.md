@@ -91,27 +91,27 @@ Hashes check content consistency; they do not independently prove a conclusion i
 
 | Component | Version | Download / documentation |
 | --- | --- | --- |
-| XMi | **0.1.3** | [Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) · [Lightweight ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip) · [Source ZIP](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip) · [Checksums](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt) |
-| XDev | **0.1.5** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) |
+| XMi | **0.1.4** | [Source](https://github.com/NUVANU/XMi) · [Latest source ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md) · [Older v0.1.3 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) |
+| XDev | **0.1.6** | [Source](https://github.com/NUVANU/XDev) · [Source ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261125.md) |
 | XMem | **0.1.2** | [Source](https://github.com/NUVANU/XMem) · [Source ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [Update note](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
-Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)**. The documented local path focuses on Windows/Codex. The XMi links above point to fixed v0.1.3 assets. XDev/XMem main ZIPs change with the branch; record the commit for reproduction. Release notes retain known issues and compatibility boundaries.
+Start with the **[installation guide](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)**. The documented local path focuses on Windows/Codex. All main ZIPs change with the branch; record the commit for reproduction. The fixed XMi v0.1.3 assets are older and do not contain 0.1.4. This sync updates source and documentation; existing Release attachments remain unchanged. Release notes retain known issues and compatibility boundaries.
 
 After installation and configuration checks, ask your agent:
 
 > Develop the confirmed requirements. Use XDev at key stages to check scope and delivery evidence. Retrieve applicable history and save key records through configured XMem. Finish by explaining what changed, what was actually verified, and what remains unverified.
 
-## XMi 0.1.3: less repetition, traceable decisions
+## XMi 0.1.4: finalization and formal-review evidence
 
-V0.1.3 packages the 2026-11-22 update as fixed source/lightweight ZIPs with SHA-256 checksums; v0.1.2 remains unchanged. It adds bounded checklist-delivery preflight, version-bound incremental reads and short validation receipts, plus reuse of confirmed blueprint choices where eligible. Complete decision lists, genuine replies and blocking checks remain. An optional local prototype adapter presents first-version flows, groups choices and exports a sixteen-file prototype specification; the ordinary MCP catalog is unchanged by default.
+Native finalization combines outstanding choices and readiness checks; numbered pages and bound short replies reduce repeated navigation. Formal-review material retains full text and source anchors; receipts are checked against the frozen version and required findings. The supported Windows launch/recovery path needs trusted configuration and appropriate authorization. Compaction hooks can retain project context, with optional XMem checkpoints; XMi retains its authoritative product model.
 
-Back up existing data and update its reader before upgrading; review the changed hooks and reconnect before checking active loading. See [compatibility and scoped verification](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md). This publication does not establish end-to-end acceptance of the new three-component combination.
+Formal review may use the configured Codex model and quota. Installing the plugin does not authorize submission of private material. Missing evidence and unresolved blockers remain explicit. See [compatibility, privacy and validation](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md). Older fixed v0.1.3 installers remain available without this update.
 
-## XDev 0.1.5: project-local task data
+## XDev 0.1.6: optional milestone Goal
 
-Ordinary supervised work can explicitly keep XDev configuration, inputs, and control records in the project’s direct `.xdev` directory. Only its three reserved runtime paths are excluded from candidate membership; other `.xdev` product files remain checked. Initialization preserves closed permissions and does not overwrite or migrate existing records.
+The main coordinator can offer Codex's native Goal for the current confirmed, authorized milestone. Before creation it checks project, version, acceptance criteria and existing Goal state. An unanswered option, Later selection or missing capability creates nothing; ordinary authorized work continues. Goal serves host lifecycle and does not replace non-author Review, actual QA, scope, budget or deadlines.
 
-XSpec intake, the legacy XMem bridge, and external implementation-artifact adoption continue to use external layout. Native XMem is configured separately. Bounded continuation, independent Review, actual QA, and finite authorization remain in place. See the [update and scope](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) and [installation choices](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md).
+The 0.1.5 project-local layout and external-layout restrictions remain. See [the update and verification scope](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261125.md). This source sync does not establish joint acceptance of the new combination, real long-running Goal use or correct adoption after compaction.
 
 ## Current progress and direction
 

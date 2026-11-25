@@ -91,27 +91,27 @@ X Suite 将质量管理的方法带到 AI 代码工程：通过 **XMi、XDev、X
 
 | 组件 | 版本 | 下载与说明 |
 | --- | --- | --- |
-| XMi | **0.1.3** | [发布页](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) · [轻量安装包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip) · [源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip) · [校验和](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt) |
-| XDev | **0.1.5** | [仓库](https://github.com/NUVANU/XDev) · [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md) |
+| XMi | **0.1.4** | [仓库](https://github.com/NUVANU/XMi) · [最新源码 ZIP](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md) · [旧版 v0.1.3 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3) |
+| XDev | **0.1.6** | [仓库](https://github.com/NUVANU/XDev) · [源码 ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261125.md) |
 | XMem | **0.1.2** | [仓库](https://github.com/NUVANU/XMem) · [源码 ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip) · [更新说明](https://github.com/NUVANU/XMem/blob/main/docs/PUBLIC-UPDATE-20261115.md) |
 
-按 **[安装指南](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)** 开始，当前说明以 Windows/Codex 本地路径为主。XMi 表内链接指向固定 v0.1.3 发行包；XDev、XMem 的 main ZIP 随提交变化，复现时请记录 commit；发行说明保留已知问题和兼容范围。
+按 **[安装指南](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)** 开始，当前说明以 Windows/Codex 本地路径为主。三者 main ZIP 均随提交变化，复现时请记录 commit。XMi 固定 v0.1.3 发行包是旧版，不含 0.1.4 更新；本次仅更新源码与说明，发行附件保持原样。
 
 安装并核对配置后，可以这样向 Agent 提出任务：
 
 > 请按已确认的需求开发。在关键节点用 XDev 核对范围与交付依据；通过已配置的 XMem 查找适用历史并保存关键记录。最后说明这次改了什么、实际验证了什么、还有什么未验证。
 
-## XMi 0.1.3：少重复，保留确认依据
+## XMi 0.1.4：收尾与正式评审依据
 
-本次 v0.1.3 将 2026-11-22 更新整理为固定源码包和轻量安装包，附 SHA-256 校验和；旧 v0.1.2 保持原样。新增有界清单交付预检、按版本增量读取与短校验回执，适用时沿用已确认的蓝图选择；完整清单、真实回复和阻塞校验继续保留。独立的可选本地原型适配器支持展示首版流程、集中处理选择并输出 16 文件原型规格，普通 MCP 默认工具目录保持原样。
+原生收尾入口集中处理待决选择与就绪检查，编号文档页面与绑定短回复减少重复导航。正式评审材料保留完整原文与锚点，回执核对冻结版本和必需发现项；受支持的 Windows 启动、恢复路径需要可信配置和相应授权。压缩钩子可保存项目上下文，可选 XMem 路由保存检查点，原始产品模型仍归 XMi。
 
-升级前备份已有数据并更新读取器；重新审阅钩子、连接后再核验加载。旧读取器兼容性及有限验证范围见[XMi 更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261122.md)。本次发布同步不等于新版三件套已完成联合端到端验收。
+正式评审可能使用所配置的 Codex 模型与额度，插件安装不等于私有材料提交授权。缺少证据或仍有阻塞时保留未就绪状态。详见[更新、兼容与隐私边界](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md)。旧 v0.1.3 固定安装包继续可用，但不包含本次源码更新。
 
-## XDev 0.1.5：任务数据可放在项目内
+## XDev 0.1.6：可选里程碑 Goal
 
-普通受监督任务可显式将 XDev 配置、输入和控制记录放在工程直属 `.xdev` 中。候选清单只排除三个保留的运行数据路径，其他 `.xdev` 产品文件仍正常检查；初始化保持权限默认关闭，不覆盖或迁移已有记录。
+主统筹可为当前已确认、已授权的里程碑提供一次 Codex 原生 Goal 选择。创建前核对项目、版本、验收项和已有 Goal；未回复、选择“稍后”或能力缺失都不创建，正常授权工作继续。Goal 接续宿主生命周期，不替代独立 Review、实际 QA、范围、预算或截止。
 
-XSpec 接收、旧 XMem bridge 与外部实施产物采用继续使用外置布局，原生 XMem 独立配置。有界持续推进、非作者 Review、实际 QA 与有限授权保持。详见[更新与支持范围](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261120.md)及[安装选项](https://github.com/NUVANU/X-Suite/blob/main/INSTALL.md)。
+保留 0.1.5 的项目内任务数据布局及外置布局限制。详见[更新与验证范围](https://github.com/NUVANU/XDev/blob/main/docs/PUBLIC-UPDATE-20261125.md)。本次源码同步不代表新三件套组合、真实 Goal 长任务或压缩后采用已经联合验收。
 
 ## 当前进展与后续方向
 

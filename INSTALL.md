@@ -1,12 +1,12 @@
 # X Suite installation / 社区版安装
 
-Public source set: **XMi 0.1.3 · XDev 0.1.5 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
+Public source set: **XMi 0.1.4 · XDev 0.1.6 · XMem 0.1.2**. Windows x64 / Node **24.20.0** / npm **11.19.0** / pnpm **11.25.0** is the documented local path. Use a Codex version with local plugin and MCP support. Keep the three source directories in a permanent local folder.
 
 本次采用宿主直接连接 XMem 的方式。旧 `setup-community-memory.ts` 联合桥接安装入口对应旧版构建，不适用于本次源码组合；不要通过改白名单或旧指纹强行接入。新版组件源码同步与新版三件套端到端联合验收分别记录。
 
 ## 1. Download / 下载
 
-- XMi: [v0.1.3 Release](https://github.com/NUVANU/XMi/releases/tag/v0.1.3), [lightweight ZIP / 轻量包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-lite.zip), [source ZIP / 源码包](https://github.com/NUVANU/XMi/releases/download/v0.1.3/xmi-0.1.3-source.zip), [SHA256SUMS](https://github.com/NUVANU/XMi/releases/download/v0.1.3/SHA256SUMS.txt), [release notes / 发行说明](https://github.com/NUVANU/XMi/blob/main/docs/public/RELEASE-0.1.3.md). Both ZIPs need Node.js and dependencies; verify the archive checksum before installing. Neither includes personal state. The earlier v0.1.2 release stays unchanged.
+- XMi: [latest 0.1.4 source ZIP / 最新源码](https://github.com/NUVANU/XMi/archive/refs/heads/main.zip), [update / 更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md). The [fixed v0.1.3 Release / 旧版固定发行包](https://github.com/NUVANU/XMi/releases/tag/v0.1.3), including its lightweight installer and checksums, remains unchanged and does not include this source update. Both source and lightweight paths need Node.js and dependencies.
 - XDev: [public source](https://github.com/NUVANU/XDev) / [main ZIP](https://github.com/NUVANU/XDev/archive/refs/heads/main.zip).
 - XMem: [public source](https://github.com/NUVANU/XMem) / [main ZIP](https://github.com/NUVANU/XMem/archive/refs/heads/main.zip).
 
@@ -25,7 +25,9 @@ codex plugin add xmi@xmi-local --json
 
 Review the plugin/hook prompts in Codex and reopen the connection. See [XMi installation](https://github.com/NUVANU/XMi/blob/main/docs/public/INSTALL.md) and [workflow](https://github.com/NUVANU/XMi/blob/main/docs/public/WORKFLOW.md) for confirmation, version-bound architecture, review, and separately authorized export.
 
-已有 XMi 升级先备份并保留数据路由，按其升级说明更新入口；首次配置工具不接管已有数据库。新增蓝图绑定事件须由新版读取器读取，旧版回退须使用升级前备份。通过宿主入口审阅 Stop / UserPromptSubmit 钩子并重新连接，再核对实际加载；默认安装无需启用可选原型适配器。
+已有 XMi 升级先备份并保留数据路由，按其升级说明更新入口；首次配置工具不接管已有数据库。新增蓝图绑定事件须由新版读取器读取，旧版回退须使用升级前备份。通过宿主入口审阅 Stop / UserPromptSubmit / PreCompact / PostCompact 钩子并重新连接，再核对实际加载；默认安装无需启用可选原型适配器。
+
+可选 Windows 正式评审须具备可信本地配置与数据授权，可能使用模型额度；默认配置成功不证明该路径已启用。详见[XMi 最新更新说明](https://github.com/NUVANU/XMi/blob/main/docs/public/UPDATE-20261125.md)。XDev 的原生 Goal 也是可选的宿主能力，仅在当前里程碑的明确选择后创建，不替代执行或交付权限。
 
 ## 3. Build XMem / 构建独立 XMem
 
@@ -103,7 +105,7 @@ node --experimental-strip-types mcp/local.ts init --project-root C:\Projects\my-
 ## 6. Verify / 分开核验
 
 - XMi: actual plugin version and configured data route; prepare is not confirmation or export.
-- XDev: actual 0.1.5 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
+- XDev: actual 0.1.6 release declaration, binding/permissions, current task contract, non-author Review, actual QA, and result.
 - XMem: actual 0.1.2 package/runtime status, explicit project/task/storage, permitted save, complete readback, and a later-session checkpoint recovery.
 
 XDev 使用宿主原生 XMem 工具，不要求旧 bridge 配置；历史不是授权。安装成功、当前会话可见、实际执行与新版联合验收是不同结论。未验证的宿主、功能或组合应如实报告。
